@@ -24,23 +24,23 @@ type polygon = {
 
 type line = { a : float point; b : float point; stroke : color }
 
-type primitive =
+type joy_shape =
   | Circle of circle
   | Ellipse of ellipse
   | Line of line
   | Polygon of polygon
-  | Complex of primitive list
+  | Complex of joy_shape list
 
-type primitives = primitive list
+type joy_shapes = joy_shape list
 
 val point : int -> int -> float point
-val circle : ?c:float point -> int -> primitive
-val rectangle : ?c:float point -> int -> int -> primitive
-val ellipse : ?c:float point -> int -> int -> primitive
-val complex : primitive list -> primitive
-val line : ?a:float point -> float point -> primitive
-val polygon : float point list -> primitive
-val with_stroke : color -> primitive -> primitive
-val with_fill : color -> primitive -> primitive
-val no_stroke : primitive -> primitive
-val no_fill : primitive -> primitive
+val circle : ?c:float point -> int -> joy_shape
+val rectangle : ?c:float point -> int -> int -> joy_shape
+val ellipse : ?c:float point -> int -> int -> joy_shape
+val complex : joy_shape list -> joy_shape
+val line : ?a:float point -> float point -> joy_shape
+val polygon : float point list -> joy_shape
+val with_stroke : color -> joy_shape -> joy_shape
+val with_fill : color -> joy_shape -> joy_shape
+val no_stroke : joy_shape -> joy_shape
+val no_fill : joy_shape -> joy_shape

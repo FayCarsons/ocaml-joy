@@ -1,27 +1,27 @@
 type 'a point = 'a Primitive.point
-type primitive = Primitive.primitive
-type primitives = Primitive.primitives
+type joy_shape = Primitive.joy_shape
+type joy_shapes = Primitive.joy_shapes
 type transformation = Transform.transformation
 type color = Color.color
 
 val point : int -> int -> float point
-val circle : ?c:float point -> int -> primitive
-val rectangle : ?c:float point -> int -> int -> primitive
-val ellipse : ?c:float point -> int -> int -> primitive
-val line : ?a:float point -> float point -> primitive
-val polygon : float point list -> primitive
-val complex : primitives -> primitive
-val with_stroke : color -> primitive -> primitive
-val with_fill : color -> primitive -> primitive
-val no_stroke : primitive -> primitive
-val no_fill : primitive -> primitive
+val circle : ?c:float point -> int -> joy_shape
+val rectangle : ?c:float point -> int -> int -> joy_shape
+val ellipse : ?c:float point -> int -> int -> joy_shape
+val line : ?a:float point -> float point -> joy_shape
+val polygon : float point list -> joy_shape
+val complex : joy_shapes -> joy_shape
+val with_stroke : color -> joy_shape -> joy_shape
+val with_fill : color -> joy_shape -> joy_shape
+val no_stroke : joy_shape -> joy_shape
+val no_fill : joy_shape -> joy_shape
 val rotate : int -> transformation
 val translate : int -> int -> transformation
 val scale : float -> transformation
 val compose : transformation -> transformation -> transformation
 val repeat : int -> transformation -> transformation
-val map_stroke : (color -> color) -> primitive -> primitive
-val map_fill : (color -> color) -> primitive -> primitive
+val map_stroke : (color -> color) -> joy_shape -> joy_shape
+val map_fill : (color -> color) -> joy_shape -> joy_shape
 
 val random : ?min:int -> int -> int 
 val frandom : ?min:float -> float -> float 
@@ -47,5 +47,5 @@ val init :
   unit ->
   unit
 
-val show : primitives -> unit
+val show : joy_shapes -> unit
 val write : ?filename:string -> unit -> unit

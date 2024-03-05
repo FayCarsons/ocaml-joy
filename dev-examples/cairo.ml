@@ -14,12 +14,12 @@ type ellipse = {
 type line = { a : point; b : point }
 type polygon = point list
 
-type primitive =
+type joy_shape =
   | Circle of circle
   | Ellipse of ellipse
   | Line of line
   | Polygon of polygon
-  | Complex of primitive list
+  | Complex of joy_shape list
 
 (* point + scalar arithmetic *)
 let ( -! ) { x = x1; y = y1 } scalar = { x = x1 -. scalar; y = y1 -. scalar }
@@ -216,8 +216,8 @@ let draw_polygon ctx (polygon : polygon) =
 let complex shapes = Complex shapes
 
 (* Root render fn *)
-let rec render_shape ctx primitive =
-  (match primitive with
+let rec render_shape ctx joy_shape =
+  (match joy_shape with
   | Circle circle -> draw_circle ctx circle
   | Ellipse ellipse -> draw_ellipse ctx ellipse
   | Line line -> draw_line ctx line
@@ -226,8 +226,8 @@ let rec render_shape ctx primitive =
   write ctx
 
 (* Validates context before rendering *)
-let render primitive =
-  match !context with Some ctx -> render_shape ctx primitive | None -> fail ()
+let render joy_shape =
+  match !context with Some ctx -> render_shape ctx joy_shape | None -> fail ()
 
 (* 'sketch' functions - this is a prototype of what the user would be writing *)
 let draw () =

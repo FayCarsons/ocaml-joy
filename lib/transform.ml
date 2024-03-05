@@ -1,6 +1,6 @@
 open Primitive
 
-type transformation = primitive -> primitive
+type transformation = joy_shape -> joy_shape
 
 let rec translate dx dy = function
   | Circle circle ->
@@ -88,16 +88,16 @@ let rec rotate degrees = function
 
 let compose f g x = g (f x)
 
-let repeat n op primitive =
+let repeat n op joy_shape =
   let rec repeat' = function
     | 0, shapes -> shapes
-    | n, [] -> repeat' (n - 1, [ primitive ])
+    | n, [] -> repeat' (n - 1, [ joy_shape ])
     | n, (transformed :: _ as shapes) ->
         repeat' (n - 1, op transformed :: shapes)
   in
   Complex (repeat' (n, []))
 
-(** Takes a function and a primitive and returns a new primitive with the 
+(** Takes a function and a joy_shape and returns a new joy_shape with the 
     function applied to the original's color *)
 let rec map_stroke f = function
   | Circle circle' ->

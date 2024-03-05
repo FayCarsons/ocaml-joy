@@ -2,7 +2,7 @@ open Graphics
 
 type point = { x : int; y : int }
 type circle = { c : point; radius : int }
-type primitive = Circle of circle
+type joy_shape = Circle of circle
 
 let canvas_size = (500, 500)
 let canvas_mid = { x = fst canvas_size / 2; y = snd canvas_size / 2 }

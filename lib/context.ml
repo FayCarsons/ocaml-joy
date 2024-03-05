@@ -44,7 +44,7 @@ let background color =
       Cairo.fill ctx
   | None -> fail ()
 
-(** Sets the width of lines for both stroke of shapes and line primitives. 
+(** Sets the width of lines for both stroke of shapes and line joy_shapes. 
     Can be any positive integer, with larger numbers producing thicker lines. 
     default is 2 *)
 let set_line_width line_width =
