@@ -1,4 +1,4 @@
-type transformation = Primitive.joy_shape -> Primitive.joy_shape
+type transformation = Geometry.joy_shape -> Geometry.joy_shape
 
 val translate : int -> int -> transformation
 val scale : float -> transformation

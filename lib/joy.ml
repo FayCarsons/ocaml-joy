@@ -1,5 +1,5 @@
 include Random
-include Primitive
+include Geometry
 include Transform
 include Color
 

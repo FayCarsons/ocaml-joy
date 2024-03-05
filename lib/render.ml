@@ -1,4 +1,4 @@
-open Primitive
+open Geometry
 open Context
 open Util
 

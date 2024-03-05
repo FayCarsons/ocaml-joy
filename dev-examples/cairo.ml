@@ -92,7 +92,7 @@ let scale_point size point =
   let x, y = (x /. size.x, y /. size.y) in
   (x, y)
 
-(* Primitive rendering fns *)
+(* Geometry rendering fns *)
 
 (* Circle *)
 let circle ?point radius =

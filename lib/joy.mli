@@ -1,6 +1,6 @@
-type 'a point = 'a Primitive.point
-type joy_shape = Primitive.joy_shape
-type joy_shapes = Primitive.joy_shapes
+type 'a point = 'a Geometry.point
+type joy_shape = Geometry.joy_shape
+type joy_shapes = Geometry.joy_shapes
 type transformation = Transform.transformation
 type color = Color.color
 

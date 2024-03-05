@@ -1,4 +1,4 @@
-open Primitive
+open Geometry
 
 type transformation = joy_shape -> joy_shape
 
