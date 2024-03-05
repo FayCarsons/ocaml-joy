@@ -1,4 +1,4 @@
-type transformation = Shape.shape -> Shape.shape
+type transformation = Primitive.primitive -> Primitive.primitive
 
 val translate : int -> int -> transformation
 val scale : float -> transformation

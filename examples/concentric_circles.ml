@@ -4,7 +4,7 @@ let () =
   init ();
   let init_circle = circle 200 in
   let interval = 1. -. (1. /. 20.) in
-  let rec make_concentric (arr : shape list) (i : int) : shape list =
+  let rec make_concentric (arr : primitive list) (i : int) : primitive list =
     match (arr, i) with
     | [], 21 -> make_concentric [ init_circle ] 20
     | hd :: _, n when n > 0 ->

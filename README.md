@@ -41,8 +41,8 @@ and renders this:
 ![circle](/tutorial-circle.png)
 
 Let's break this down. `init` does all the behind-the-scenes render magic that 
-allows our shape to be drawn to an image file. `circle 100` creates a circle at 
-position `0,0`, the default for shape constructor functions when a position is 
+allows our primitive to be drawn to an image file. `circle 100` creates a circle at 
+position `0,0`, the default for primitive constructor functions when a position is 
 not passed, with radius 100. You could draw the circle 100 units above center 
 like this:
 
@@ -51,7 +51,7 @@ like this:
 ![offset-circle](/tutorial-circle-offset.png)
 
 Notice the call to `show`, the circle is placed within a list. This is how we 
-render shapes in Joy. Placing our shape arguments in a list allows us to draw 
+render shapes in Joy. Placing our primitive arguments in a list allows us to draw 
 any number of shapes at once without any awkward optional argument syntax. 
 
 And finally `write` writes our digital canvas to a PNG file. `write` takes an
@@ -61,7 +61,7 @@ that you can name your file something besides `joy.png`.
 ## Transformations
 
 A core concept of Joy is the "transformation". These are functions that change 
-the way the shape is drawn, its position, or rotation, or size. A simple 
+the way the primitive is drawn, its position, or rotation, or size. A simple 
 transformation, let's start with rotation, could look like this:
 
 ```ocaml
@@ -100,9 +100,9 @@ to functional programming, let me break it down.
 
 `repeat` takes three arguments. The first is the number of iterations, or how many
 shapes you willl end up with, the second is the transformation you want to apply,
-and the last is the initial shape. 
+and the last is the initial primitive. 
 
-It takes that initial shape, applies the transformation you gave it, then 
+It takes that initial primitive, applies the transformation you gave it, then 
 *take the result of that* and applies the tranformation to *that*, repeatedly 
 the number of times specified with the first argument, and put them all together 
 (more on this later). You can think of it like a `fold`/`reduce` operation over 
@@ -112,15 +112,15 @@ There is an added benefit to this...
 
 ## Complex shapes
 
-`repeat` returns a single shape, when you might expect an operation like that to 
+`repeat` returns a single primitive, when you might expect an operation like that to 
 return a list of shapes. It actually *sort* of does both, let me explain. 
 
 In addition to the usual geometric primitives, Joy also has a `Complex` type. 
-This is a list of shapes that act like a single shape. This means that 
-transformations applied to a complex shape are applied uniformly to every shape 
-contained in a complex shape. This is useful because it allows you to create 
+This is a list of shapes that act like a single primitive. This means that 
+transformations applied to a complex primitive are applied uniformly to every primitive 
+contained in a complex primitive. This is useful because it allows you to create 
 more visually complex shapes and treat the the same as you would primitives, 
-transforming and composing them. In addition to `repeat`, a complex shape can 
+transforming and composing them. In addition to `repeat`, a complex primitive can 
 also be created like so:
 
 ```ocaml

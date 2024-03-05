@@ -1,27 +1,27 @@
-type 'a point = 'a Shape.point
-type shape = Shape.shape
-type shapes = Shape.shapes
+type 'a point = 'a Primitive.point
+type primitive = Primitive.primitive
+type primitives = Primitive.primitives
 type transformation = Transform.transformation
 type color = Color.color
 
 val point : int -> int -> float point
-val circle : ?c:float point -> int -> shape
-val rectangle : ?c:float point -> int -> int -> shape
-val ellipse : ?c:float point -> int -> int -> shape
-val line : ?a:float point -> float point -> shape
-val polygon : float point list -> shape
-val complex : shapes -> shape
-val with_stroke : color -> shape -> shape
-val with_fill : color -> shape -> shape
-val no_stroke : shape -> shape
-val no_fill : shape -> shape
+val circle : ?c:float point -> int -> primitive
+val rectangle : ?c:float point -> int -> int -> primitive
+val ellipse : ?c:float point -> int -> int -> primitive
+val line : ?a:float point -> float point -> primitive
+val polygon : float point list -> primitive
+val complex : primitives -> primitive
+val with_stroke : color -> primitive -> primitive
+val with_fill : color -> primitive -> primitive
+val no_stroke : primitive -> primitive
+val no_fill : primitive -> primitive
 val rotate : int -> transformation
 val translate : int -> int -> transformation
 val scale : float -> transformation
 val compose : transformation -> transformation -> transformation
 val repeat : int -> transformation -> transformation
-val map_stroke : (color -> color) -> shape -> shape
-val map_fill : (color -> color) -> shape -> shape
+val map_stroke : (color -> color) -> primitive -> primitive
+val map_fill : (color -> color) -> primitive -> primitive
 
 val random : ?min:int -> int -> int 
 val frandom : ?min:float -> float -> float 
@@ -47,5 +47,5 @@ val init :
   unit ->
   unit
 
-val show : shapes -> unit
+val show : primitives -> unit
 val write : ?filename:string -> unit -> unit

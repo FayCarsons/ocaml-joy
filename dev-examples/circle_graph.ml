@@ -3,8 +3,8 @@
    type point = { x : int; y : int }
    type rectangle = { c : point; length : int; width : int }
    type circle = { c : point; radius : int }
-   type shape = Circle of circle | Rectangle of rectangle
-   type _shapes = shape list
+   type primitive = Circle of circle | Rectangle of rectangle
+   type _shapes = primitive list
 
    let render_shape s =
      match s with
@@ -28,7 +28,7 @@ open Graphics
 
 type point = { x : int; y : int }
 type circle = { c : point; radius : int }
-type shape = Circle of circle
+type primitive = Circle of circle
 
 let canvas_mid = { x = 250; y = 250 }
 

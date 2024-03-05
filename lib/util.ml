@@ -1,5 +1,5 @@
 (* point -> point arithmetic *)
-open Shape
+open Primitive
 
 let ( /~ ) p1 p2 = { x = p1.x /. p2.x; y = p1.x /. p2.x }
 

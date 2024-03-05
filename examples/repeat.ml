@@ -2,8 +2,8 @@ open Joy
 
 (*
     demonstration of the repeat function
-    takes n, an operation, and an initial shape, and applies the operation
-    iteratively to the initial shape n times
+    takes n, an operation, and an initial primitive, and applies the operation
+    iteratively to the initial primitive n times
 
     adapted from the original Joy python library's examples
 *)

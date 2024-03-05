@@ -9,7 +9,7 @@ type star = {
   num_points : int;
 }
 
-type shape = Star of star
+type primitive = Star of star
 
 let canvas_size = (500, 500)
 

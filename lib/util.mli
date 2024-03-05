@@ -1,8 +1,8 @@
-val ( /~ ) : float Shape.point -> float Shape.point -> float Shape.point
-val ( -! ) : float Shape.point -> float -> float Shape.point
-val ( /! ) : float Shape.point -> float -> float Shape.point
-val ( *! ) : float Shape.point -> float -> float Shape.point
-val pmap : ('a -> 'b) -> 'a Shape.point -> 'b Shape.point
+val ( /~ ) : float Primitive.point -> float Primitive.point -> float Primitive.point
+val ( -! ) : float Primitive.point -> float -> float Primitive.point
+val ( /! ) : float Primitive.point -> float -> float Primitive.point
+val ( *! ) : float Primitive.point -> float -> float Primitive.point
+val pmap : ('a -> 'b) -> 'a Primitive.point -> 'b Primitive.point
 val tmap : ('a -> 'b) -> 'a * 'a -> 'b * 'b
 val tmap3 : ('a -> 'b) -> 'a * 'a * 'a -> 'b * 'b * 'b
 val tmap4 : ('a -> 'b) -> 'a * 'a * 'a * 'a -> 'b * 'b * 'b * 'b

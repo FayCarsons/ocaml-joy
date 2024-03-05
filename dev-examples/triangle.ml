@@ -2,7 +2,7 @@ open Graphics
 
 type point = { x : int; y : int }
 type triangle = { p1 : point; p2 : point; p3 : point }
-type shape = Triangle of triangle
+type primitive = Triangle of triangle
 
 let canvas_size = (500, 500)
 

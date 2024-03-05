@@ -23,14 +23,14 @@ type polygon = {
   fill : color option;
 }
 
-type shape =
+type primitive =
   | Circle of circle
   | Ellipse of ellipse
   | Line of line
   | Polygon of polygon
-  | Complex of shape list
+  | Complex of primitive list
 
-type shapes = shape list
+type primitives = primitive list
 
 let point x y =
   let x, y = (float_of_int x, float_of_int y) in
